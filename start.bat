@@ -8,6 +8,8 @@ echo 1 Keitan's Classic Formal Vest
 echo 2 Gom's Craftable Merge for ma gf
 echo 3 CocoMe's shirts + hats
 echo.
+echo c Check the applied status
+echo.
 set /p "option=:> "
 if /i "%option%" equ "1" goto option1
 if /i "%option%" equ "2" goto option2
