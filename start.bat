@@ -1,7 +1,7 @@
 @echo off
 :start
+set option=0
 cls
-echo.
 echo Content Switcher by GomXDD
 echo.
 echo 1 Keitan's Classic Formal Vest
