@@ -37,18 +37,18 @@ if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\C
 )
 
 :option2
-if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftable-old.xnb" (
+if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftables-old.xnb" (
 	echo This option has installed before, Reverting...
-	del /f "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftable.xnb" 
-	rename "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftable-old.xnb" "Craftable.xnb"
+	del /f "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftables.xnb" 
+	rename "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftables-old.xnb" "Craftables.xnb"
 	echo Successfully reverted.
 	pause
 	goto :start
 ) else (
 	echo This option is not installed before. Applying...
-	rename "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftable.xnb" "Craftable-old.xnb"
-	powershell Invoke-WebRequest "https://github.com/GomXDD/Content-Switcher/raw/refs/heads/main/resources/options/2/Craftable.xnb" -OutFile "%TEMP%\Craftable.xnb"
-	move %TEMP%\Craftable.xnb "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets"
+	rename "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftables.xnb" "Craftables-old.xnb"
+	powershell Invoke-WebRequest "https://github.com/GomXDD/Content-Switcher/raw/refs/heads/main/resources/options/2/Craftables.xnb" -OutFile "%TEMP%\Craftables.xnb"
+	move %TEMP%\Craftables.xnb "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets"
 	echo Successfully applied. If you want to restore the content, Re-launch this script.
 	pause
 	goto :start
@@ -80,7 +80,7 @@ if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\C
 
 :check
 if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\shirts-old.xnb" (echo Option 1 : Applied) else (echo Option 1 : Not Applied)
-if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftable-old.xnb" (echo Option 2 : Applied) else (echo Option 2 : Not Applied)
+if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\TileSheets\Craftables-old.xnb" (echo Option 2 : Applied) else (echo Option 2 : Not Applied)
 if exist "C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\Characters\Farmer\shirts-old3.xnb" (echo Option 3 : Applied) else (echo Option 3 : Not Applied)
 pause
 goto :start
